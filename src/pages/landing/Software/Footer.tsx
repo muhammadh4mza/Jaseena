@@ -1,80 +1,64 @@
-import { FormInput } from '@/components'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-//images
-import logoDark from '@/assets/images/logo-dark.png'
+// Images
+
+import footerBg from '@/assets/images/other/cityline.png'; // Add your background image path here
 
 const Footer = () => {
-	return (
-		<footer className="pt-10 pb-6">
-			<div className="container">
-				<div className="text-center">
-					<h2 className="text-3xl/tight font-medium my-5">
-						Be the first to know!
-					</h2>
-					<p className="text-gray-500">
-						We'll inform you about new updates, features, but no spam, we
-						promise.
-					</p>
-					<div className="flex flex-wrap items-center justify-center gap-2 my-10">
-						<FormInput
-							type="email"
-							name="Email"
-							placeholder="Your email"
-							className="text-sm rounded border-gray-200 focus:border-gray-400 focus:ring-0 bg-transparent py-2 px-4"
-							containerClass="flex items-center gap-2"
-						>
-							<Link
-								to=""
-								className="w-full py-2 px-4 rounded text-white bg-primary hover:shadow-lg hover:shadow-primary/50 focus:outline focus:outline-primary/50"
-							>
-								Sign Up
-							</Link>
-						</FormInput>
-					</div>
-				</div>
-			</div>
-			<div className="border-b" />
-			<div className="container">
-				<div className="text-center mt-10">
-					<p className="text-gray-600 mb-7">
-						{new Date().getFullYear()}© Prompt. All rights reserved. Crafted by{' '}
-						<Link
-							to=""
-							className="text-gray-800 hover:text-primary transition-all"
-						>
-							Coderthemes
-						</Link>
-					</p>
-					<ul className="flex flex-wrap items-center justify-center gap-10 mb-8">
-						<li>
-							<Link to="">Changelog</Link>
-						</li>
-						<li>
-							<Link to="">FAQ</Link>
-						</li>
-						<li>
-							<Link to="">Press kit</Link>
-						</li>
-						<li>
-							<Link to="">Contact us</Link>
-						</li>
-						<li>
-							<Link to="" className="hover:text-primary">
-								Careers&nbsp;
-								<span className="px-2 py-1 text-xs rounded-full text-primary bg-primary/10">
-									We're hiring
-								</span>
-							</Link>
-						</li>
-					</ul>
-					<Link to="/">
-						<img src={logoDark} className="h-8 mx-auto" />
-					</Link>
-				</div>
-			</div>
-		</footer>
-	)
-}
+    return (
+        <footer
+            className="bg-black text-white py-10 "
+            style={{ backgroundImage: `url(${footerBg})`, backgroundSize: 'auto',  }}
+        >
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
+                <div className="space-y-4">
+                    <h2 className="text-xl font-bold">Jaseena Trading Company</h2>
+                    <p className="text-sm">
+                        New ENB Building - OFFICE #1007 - Baniyas Rd, near Abra - Deira - Al Sabkha - Dubai - United Arab Emirates
+                    </p>
+                    <p className="text-sm">
+                        <a href="http://www.jaseenainternational.com" target="_blank" rel="noopener noreferrer" className="underline">
+                            www.jaseenainternational.com
+                        </a>{' '}
+                        |{' '}
+                        <a href="http://www.jasina.com.sg" target="_blank" rel="noopener noreferrer" className="underline">
+                            www.jasina.com.sg
+                        </a>
+                    </p>
+                </div>
 
-export default Footer
+                <div className="space-y-6 text-center md:text-left">
+                    <ul className="flex flex-col md:flex-row justify-center md:justify-start gap-4 text-sm">
+                        <li>
+                            <Link to="/privacy-policy" className="hover:underline">
+                                Privacy Policy
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/terms-conditions" className="hover:underline">
+                                Terms & Conditions
+                            </Link>
+                        </li>
+                    </ul>
+                    <div className="flex justify-center md:justify-start gap-4">
+                        <a href="#" className="text-gray-400 hover:text-white">
+                            <i className="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" className="text-gray-400 hover:text-white">
+                            <i className="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" className="text-gray-400 hover:text-white">
+                            <i className="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" className="text-gray-400 hover:text-white">
+                            <i className="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

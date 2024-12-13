@@ -30,7 +30,7 @@ const Testimonial = () => {
                     <div className="flex flex-col items-center justify-center pb-14">
                         <div className="text-center">
                             <span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
-                                Feathured Product
+                                Featured Product
                             </span>
                             
                         </div>
@@ -54,7 +54,7 @@ const Testimonial = () => {
                                             <img
                                                 src={item.image}
                                                 alt={`testimonial-${idx}`}
-                                                className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-110 hover:border-4 hover:border-gold"
+                                                className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-110 hover:border-4 "
                                                 style={{ width: '350px', height: '260px', borderRadius: '25px' }}
                                             />
                                         </SwiperSlide>

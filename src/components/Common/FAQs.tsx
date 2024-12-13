@@ -1,73 +1,69 @@
-import { useState } from 'react'
-import { FAQContent, FUCollapse } from '@/components'
+import React from "react";
 
 const FAQs = () => {
-	const [basicAccordion, setBasicAccordion] = useState<number | null>(0)
+  return (
+    <div className="faq-container font-sans text-white p-5 text-center">
+      <header className="faq-header mb-10">
+        <h1 className="bg-gradient-to-r from-[#9f6310] via-[#FFD700] to-[#9f6310] bg-clip-text text-transparent leading-[50px] text-4xl">
+          JOIN THE JASEENA COMMUNITY
+        </h1>
+        <p className="text-lg text-white mb-5">
+          Stay updated with our latest news and insights from the GCC market—delivered
+          monthly.
+        </p>
+        <div className="faq-form-container flex justify-center gap-2.5">
+          <input type="text" placeholder="NAME" className="faq-input p-2.5 border border-transparent rounded bg-[#22222200] text-white w-[250px] border-image-[linear-gradient(to_right,#9f6310,#FFD700,#9f6310)_1]" />
+          <input type="email" placeholder="EMAIL" className="faq-input p-2.5 border border-transparent rounded bg-[#22222200] text-white w-[250px] border-image-[linear-gradient(to_right,#9f6310,#FFD700,#9f6310)_1]" />
+          <button className="faq-submit-button bg-gradient-to-r from-[#9f6310] via-[#FFD700] to-[#9f6310] text-black px-6 py-2.5 border-0 w-[150px] h-[50px] text-center rounded-md">
+            SUBMIT
+          </button>
+        </div>
+      </header>
 
-	const handleBasicAccordion = (index: number) => () => {
-		if (index === basicAccordion) setBasicAccordion(null)
-		else setBasicAccordion(index)
-	}
+      <section className="faq-info-section grid grid-cols-4 gap-5 mt-10">
+        <div className="faq-info-card p-5 bg-transparent border border-gold rounded-md text-sm text-gray-300 h-[400px]">
+          <div className="faq-info-border"></div>
+          <p>Built on a foundation of effective solutions.</p>
+        </div>
+        <div className="faq-info-card p-5 bg-transparent border border-gold rounded-md text-sm text-gray-300 h-[400px]">
+          <div className="faq-info-border"></div>
+          <p>A trusted partner for brands.</p>
+        </div>
+        <div className="faq-info-card p-5 bg-transparent border border-gold rounded-md text-sm text-gray-300 h-[400px]">
+          <div className="faq-info-border"></div>
+          <p>Expanding to the Middle East and beyond.</p>
+        </div>
+        <div className="faq-info-card p-5 bg-transparent border border-gold rounded-md text-sm text-gray-300 h-[400px]">
+          <div className="faq-info-border"></div>
+          <p>Our extensive distributor network.</p>
+        </div>
+      </section>
 
-	return (
-		<section className="py-16 sm:py-24">
-			<div className="container" data-aos="fade-up" data-aos-duration="2000">
-				<div className="text-center">
-					<span className="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">
-						FAQs
-					</span>
-					<h1 className="text-3xl/tight font-medium mt-3 mb-4">
-						Frequently Asked Questions
-					</h1>
-					<p className="text-gray-500">
-						Here are some of the basic types of questions for our customers
-					</p>
-				</div>
+      <section className="team-section mt-12 text-white w-full">
+        <h2 className="text-[#ffcc00] text-2xl mb-7.5">OUR LEADERSHIP TEAM</h2>
+        <div className="team-container flex justify-center gap-5">
+          <div className="team-card border border-gray-600 rounded-lg p-5 text-center w-[400px]">
+            <div className="team-photo bg-[#333] border-2 border-[#ffcc00] w-full h-[300px] mb-3.75 rounded-md"></div>
+            <h3 className="text-lg text-[#ffcc00] mb-2.5">Imtiaz Ahmad Minhas</h3>
+            <p className="text-sm text-gray-300">Chairman & CEO</p>
+          </div>
+          <div className="team-card border border-gray-600 rounded-lg p-5 text-center w-[400px]">
+            <div className="team-photo bg-[#333] border-2 border-[#ffcc00] w-full h-[300px] mb-3.75 rounded-md"></div>
+            <h3 className="text-lg text-[#ffcc00] mb-2.5">Aamer Shahzad</h3>
+            <p className="text-sm text-gray-300">Operations Director</p>
+          </div>
+          <div className="team-card border border-gray-600 rounded-lg p-5 text-center w-[250px]">
+            <div className="team-photo bg-[#333] border-2 border-[#ffcc00] w-full h-[300px] mb-3.75 rounded-md"></div>
+            <h3 className="text-lg text-[#ffcc00] mb-2.5">Sarfraz Ahmed</h3>
+            <p className="text-sm text-gray-300">Sales Director</p>
+          </div>
+        </div>
+        <button className="learn-more-button bg-[#ffcc00] border-none rounded-md cursor-pointer text-lg mt-5 px-5 py-2.5 hover:bg-[#ffaa00]">
+          LEARN MORE
+        </button>
+      </section>
+    </div>
+  );
+};
 
-				<div
-					data-fc-type="accordion"
-					className="mt-14 lg:w-3/4 lg:mx-auto 2xl:w-2/3"
-				>
-					{(FAQContent || []).map((item, idx) => {
-						return (
-							<FUCollapse
-								key={idx}
-								open={basicAccordion == idx}
-								toggleCollapse={handleBasicAccordion(idx)}
-							>
-								<div className="border border-gray-300 rounded-lg mt-4">
-									<FUCollapse.Toggle
-										className="inline-flex p-5 items-center justify-between w-full font-semibold text-left transition"
-										data-fc-type="collapse"
-									>
-										{item.title}
-										<span className="material-symbols-rounded text-xl block transition-all fc-collapse-open:rotate-180">
-											<i className="fa-solid fa-angle-down"></i>
-										</span>
-									</FUCollapse.Toggle>
-									<FUCollapse.Menu className="w-full overflow-hidden transition-[height] duration-300">
-										<p className="text-gray-500 dark:text-gray-300 pt-3 p-5">
-											{item.description}
-										</p>
-									</FUCollapse.Menu>
-								</div>
-							</FUCollapse>
-						)
-					})}
-				</div>
-
-				<div className="text-center mt-14">
-					<p className="inline-flex flex-wrap gap-1 bg-gray-100 text-sm rounded-lg py-2 px-5">
-						Still have unanswered questions?
-						<a href="#" className="hover:text-primary transition-all">
-							{' '}
-							Contact Us
-						</a>
-					</p>
-				</div>
-			</div>
-		</section>
-	)
-}
-
-export default FAQs
+export default FAQs;

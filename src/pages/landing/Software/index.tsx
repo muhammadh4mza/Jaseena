@@ -1,4 +1,4 @@
-import { PricingCards, Testimonial,  } from '@/components';
+import { PricingCards, Testimonial, PricingCards2, FAQs } from '@/components';
 import ClientsReview from './ClientsReview';
 import Features from './Features';
 import Hero from './Hero';
@@ -13,13 +13,21 @@ const Software = () => {
             <section className="py-16 sm:py-24">
                 <PricingCards />
             </section>
-
+            
             <ClientsReview />
             
 
             <Features  />
 
             <Testimonial />
+            <section className="py-16 sm:py-24">
+                <PricingCards2 />
+            </section>
+            <section className="py-16 sm:py-24">
+                <FAQs />
+            </section>
+
+            
 
             <Footer />
         </div>

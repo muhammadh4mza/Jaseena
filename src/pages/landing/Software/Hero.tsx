@@ -27,7 +27,7 @@ const brands = [
 
 const Hero = () => {
   return (
-    <section className="main_section">
+    <section className="main_section" id="hero">
       <section className="relative py-16 sm:py-24 md:py-44">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
@@ -81,11 +81,7 @@ const Hero = () => {
 
       {/* Bottom Wave */}
       <div className="absolute bottom-0 inset-x-0 hidden sm:block">
-        <img
-          src={whiteWave}
-          alt="Wave Shape"
-          className="w-full -scale-x-100 -scale-y-100"
-        />
+        
       </div>
     </section>
   );

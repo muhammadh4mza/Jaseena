@@ -1,80 +1,42 @@
-import { Link } from 'react-router-dom'
-import { PlanItem } from './types'
+import React from 'react';
+import Care from '@/assets/images/icons/care.png';
+import empowerment from '@/assets/images/icons/empowerment.png';
+import trust from '@/assets/images/icons/trust.png';
+import sustainability from '@/assets/images/icons/sustainability.png';
 
-type PricingCardProps = {
-	plans: Array<PlanItem>
-	containerClass?: string
-	hasAnimation?: boolean
-}
+const PricingCards2 = () => {
+  return (
+    <div className="container">
+      <main className="main-content">
+        <h1>BUILT ON VALUES, <br /> DRIVEN BY IMPACT</h1>
+        <p>Empowering companies through effective solutions since 1975</p>
+        <button className="partner-button">Partner With Us</button>
 
-const PricingCards2 = ({ plans }: PricingCardProps) => {
-	return (
-		<div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-6 mt-16">
-			{(plans || []).map((plan, idx) => {
-				return (
-					<div key={idx}>
-						<div className="border text-center rounded h-full hover:shadow-lg relative">
-							<div className="p-6 flex flex-col justify-between h-full">
-								{plan.isPopular && (
-									<div className="absolute w-full h-[188px] -z-10 top-0 left-0 overflow-hidden">
-										<span className="absolute transform rotate-45 bg-primary text-center text-white font-medium py-1 right-[-52px] top-[23px] w-[170px] h-5 z-[2] text-xs overflow-hidden border border-dashed leading-[8px] border-white shadow-[0_0_0_3px] shadow-primary/40">
-											Popular
-										</span>
-									</div>
-								)}
-								<h4 className="text-lg text-primary">{plan.name}</h4>
-								<h1 className="mt-3 mb-8">
-									<sup className="align-super text-sm text-slate-500">$</sup>
-									<span className="text-3xl font-semibold">{plan.price}</span>
-									<sub className="text-sm text-slate-500">{plan.duration}</sub>
-								</h1>
-								<hr />
-								<div className="flex flex-col justify-between h-full mt-8">
-									<div className="grid gap-y-4">
-										{plan.features.map((feature, idx) => {
-											return (
-												<div
-													className="flex items-center text-start gap-2"
-													key={idx}
-												>
-													{feature && (
-														<>
-															<svg
-																className="w-5 h-5 text-green-500"
-																xmlns="http://www.w3.org/2000/svg"
-																viewBox="0 0 24 24"
-																fill="none"
-																stroke="currentColor"
-																strokeWidth={2}
-																strokeLinecap="round"
-																strokeLinejoin="round"
-															>
-																{' '}
-																<polyline points="20 6 9 17 4 12" />{' '}
-															</svg>
-															<span>{feature}</span>
-														</>
-													)}
-												</div>
-											)
-										})}
-									</div>
-									<div className="mt-14">
-										<Link
-											to=""
-											className="py-3 px-6 flex items-center justify-center rounded hover:border hover:border-primary/50 text-primary bg-primary/10 transition-all duration-500"
-										>
-											Sign Up Now
-										</Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				)
-			})}
-		</div>
-	)
-}
+        <div className="values-section">
+          <div className="value-item">
+            <img src={Care} alt="Care Icon" className="value-icon" />
+            <h3>Care</h3>
+            <p>We prioritize people, partnerships, and the planet in every decision.</p>
+          </div>
+          <div className="value-item">
+            <img src={sustainability} alt="Sustainability Icon" className="value-icon" />
+            <h3>Sustainability</h3>
+            <p>Committed to long-term growth that respects our environment.</p>
+          </div>
+          <div className="value-item">
+            <img src={trust} alt="Trust Icon" className="value-icon" />
+            <h3>Trust</h3>
+            <p>Nurtured over three decades through transparency and reliability.</p>
+          </div>
+          <div className="value-item">
+            <img src={empowerment} alt="Empowerment Icon" className="value-icon" />
+            <h3>Empowerment</h3>
+            <p>Helping businesses and communities thrive together.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
 
-export default PricingCards2
+export default PricingCards2;

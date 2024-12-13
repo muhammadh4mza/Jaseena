@@ -70,9 +70,9 @@ export interface RoutesProps {
 const dashboardRoutes: RoutesProps[] = [
 	{
 		path: '/',
-		name: 'Home',
+		name: 'Homee',
 		header: 'Navigation',
-		element: <HomePage />,
+		element: <SoftwarePage />,
 		route: Route,
 	},
 ]
@@ -80,13 +80,13 @@ const dashboardRoutes: RoutesProps[] = [
 const landingRoutes: RoutesProps[] = [
 	{
 		path: '/landing',
-		name: 'Landing',
+		name: 'Services',
 		icon: 'icon',
 		children: [
 			{
-				path: '/landing/app',
-				name: 'App',
-				element: <AppPage />,
+				path: '/#hero',
+				name: 'Ap',
+				element: <SoftwarePage />,
 				route: Route,
 			},
 			{
