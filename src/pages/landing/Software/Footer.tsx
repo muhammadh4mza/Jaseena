@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
-
-// Images
-
 import footerBg from '@/assets/images/other/cityline.png'; // Add your background image path here
 
 const Footer = () => {
     return (
-        <footer
-            className="bg-black text-white py-10 "
-            style={{ backgroundImage: `url(${footerBg})`, backgroundSize: 'auto',  }}
-        >
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
+        <footer className="relative bg-black text-white py-10">
+            <div
+                className="absolute inset-0 bg-black opacity-50"
+                style={{ backgroundImage: `url(${footerBg})`, backgroundSize: 'auto', backgroundPosition: 'bottom' }}
+            ></div>
+            <div className="relative mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
                 <div className="space-y-4">
                     <h2 className="text-xl font-bold">Jaseena Trading Company</h2>
                     <p className="text-sm">
@@ -54,7 +52,6 @@ const Footer = () => {
                             <i className="fab fa-instagram"></i>
                         </a>
                     </div>
-                    
                 </div>
             </div>
         </footer>

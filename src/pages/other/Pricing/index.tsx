@@ -1,6 +1,6 @@
 import Benefits from './Benefits'
 import Hero from './Hero'
-import PricingPlans from './PricingPlansold'
+import PricingPlans from './PricingPlans'
 import { benefits } from './data'
 import FAQs from './FAQs'
 import CTA from './CTA'
