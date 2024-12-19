@@ -384,3 +384,40 @@ body {
   border: 3px solid gold;
   border-radius: 25px;
 }
+
+.container {  
+  position: relative;  
+  width: 200px;  
+  height: 100px;  
+  display: flex; /* Align items horizontally within the container */  
+  justify-content: center;  
+  align-items: center;  
+  margin: 20px;  
+  background: lightgray; /* Background for visibility */  
+  border: 2px solid #ccc; /* Optional border */  
+  transition: background 0.3s;  
+}  
+
+.item {  
+  background-color: lightblue;  
+  padding: 20px;  
+  border-radius: 5px;  
+  transition: opacity 0.3s ease; /* Smooth transition */  
+  opacity: 0; /* Initially hidden */  
+  position: absolute; /* Position items absolutely within their container */  
+}  
+
+.container1:hover ~ .container2 .item,  
+.container2:hover ~ .container1 .item {  
+  opacity: 1; /* Show the corresponding item on hover */  
+}  
+
+/* Keep the item visible when its container is hovered */  
+.container:hover .item {  
+  opacity: 1;  
+}  
+
+/* Optionally style containers to highlight on hover */  
+.container:hover {  
+  background: #ddd; /* Change background on hover */  
+}
